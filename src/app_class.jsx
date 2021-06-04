@@ -11,7 +11,7 @@ class App_class extends Component {
             method: 'GET',
             redirect: 'follow'
         };
-        fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResult=25&key=AIzaSyCfet8upPERDAie6nwQi7R_ygAqo2D-Kis", requestOptions)
+        fetch("https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResult=25&key=", requestOptions)
             .then(response => response.json())
             .then(result => {
                 this.setState({ lists: result.items });
@@ -23,7 +23,7 @@ class App_class extends Component {
             method: 'GET',
             redirect: 'follow'
         };
-        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResult=25&q=${keyword}&key=AIzaSyCfet8upPERDAie6nwQi7R_ygAqo2D-Kis`, requestOptions)
+        fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResult=25&q=${keyword}&key=`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 this.setState({ lists: result.items });
