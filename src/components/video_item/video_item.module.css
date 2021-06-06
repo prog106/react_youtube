@@ -1,0 +1,34 @@
+.container {
+    padding: 5px;
+    width: 50%;
+}
+.item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #eee;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 0px rgb(200, 200, 200, 0.8);
+    transition: transform 100ms ease-in;
+}
+.item:hover{
+    transform: scale(1.01);
+}
+.thumbnail {
+    display: block;
+    box-sizing: border-box;
+    width: 40%;
+}
+.description {
+    margin-left: 10px;
+}
+.title {
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.channel {
+    margin: 10px 0;
+    color: #555;
+    font-size: 14px;
+}

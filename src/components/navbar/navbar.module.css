@@ -1,0 +1,35 @@
+.nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+}
+.logo {
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 24px;
+}
+.search {
+    width: 100%;
+    padding: 0 5px;
+    display: flex;
+}
+.keyword {
+    flex-basis: 100%;
+    padding: 0px 10px;
+    outline: none;
+    font-size: 16px;
+}
+.btn_search {
+    width: 50px;
+    padding: 5px 5px;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: 1px solid #000;
+    font-size: 16px;
+    cursor: pointer;
+}

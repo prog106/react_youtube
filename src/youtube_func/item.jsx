@@ -4,7 +4,8 @@ import styles from './item.css';
 const Item = (props) => {
     const item = props.item.snippet;
     const handleEmbed = () => {
-        props.onEmbed(props.item.id);
+        const id = (typeof(props.item.id) === 'string')?props.item.id:props.item.id.videoId;
+        props.onEmbed(id);
     }
     return (
         <li onClick={handleEmbed}>
