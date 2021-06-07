@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './video_item.module.css';
+import styles from './video_detail.module.css';
 
-const VideoItem = (props) => {
-    // console.log(props.video.snippet);
+const VideoDetail = (props) => {
     /* categoryId: "24"
     channelId: "UCKaCalz5N5ienIbfPzEbYuA"
     channelTitle: "Jordan Matter"
@@ -14,25 +13,14 @@ const VideoItem = (props) => {
     tags: (18) ["jordan matter", "dance photography", "challenge", "piper rockelle", "the squad", "elliana walmsley", "dance moms", "jentzen", "lev", "zachary aaronson", "photography", "headshots", "portraits", "art", "TikTok", "viral tiktoks", "who knows me better", "dhar mann"]
     thumbnails: {default: {…}, medium: {…}, high: {…}, standard: {…}, maxres: {…}}
     title: "PIPER ROCKELLE vs ELLIANA WALMSLEY Viral TikTok Challenge" */
-    const handleVideoClick = () => {
-        props.onVideoClick(props.video);
-    }
+    const embed = `https://www.youtube.com/embed/${props.selectedVideo.id}`;
     return (
-        <li className={styles.container} onClick={handleVideoClick}>
-            <div className={styles.item}>
-                <img src={props.video.snippet.thumbnails.medium.url} className={styles.thumbnail} alt="" />
-                <div className={styles.description}>
-                    <div className={styles.title}>
-                        {props.video.snippet.title}
-                    </div>
-                    <div className={styles.channel}>
-                        {props.video.snippet.channelTitle}
-                    </div>
-                </div>
-            </div>
-        </li>
-
+        <div className={styles.detail}>
+            <h3>{props.selectedVideo.snippet.title}</h3>
+            <iframe id="ytplayer" type="text/html" width="320" height="180" src={embed} frameborder="0" allowfullscreen></iframe>
+            <p>{props.selectedVideo.snippet.description}</p>
+        </div>
     )
 }
 
-export default VideoItem;
+export default VideoDetail;
