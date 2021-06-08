@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './video_item.module.css';
 
-const VideoItem = (props) => {
+const VideoItem = memo((props) => {
     // console.log(props.video.snippet);
     /* categoryId: "24"
     channelId: "UCKaCalz5N5ienIbfPzEbYuA"
@@ -17,8 +17,9 @@ const VideoItem = (props) => {
     const handleVideoClick = () => {
         props.onVideoClick(props.video);
     }
+    const display = (props.selectedVideo) ? styles.lists : styles.grid;
     return (
-        <li className={styles.container} onClick={handleVideoClick}>
+        <li className={`${styles.container} ${display}`} onClick={handleVideoClick}>
             <div className={styles.item}>
                 <img src={props.video.snippet.thumbnails.medium.url} className={styles.thumbnail} alt="" />
                 <div className={styles.description}>
@@ -33,6 +34,6 @@ const VideoItem = (props) => {
         </li>
 
     )
-}
+});
 
 export default VideoItem;

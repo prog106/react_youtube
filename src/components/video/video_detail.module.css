@@ -1,5 +1,8 @@
 .detail {
     width: 60%;
-    border: 1px solid;
-    overflow: hidden;
+    margin: 5px 0;
+    padding: 0 5px;
+}
+.pre {
+    white-space: pre-wrap;
 }

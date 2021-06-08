@@ -1,7 +1,13 @@
-.lists {
+.videolists {
     list-style: none;
     padding: 0px;
-    margin: 5px 0px;
+    margin: 0px;
     display: flex;
     flex-wrap: wrap;
+}
+.videolists.grid {
+    width: 100%;
+}
+.videolists.lists {
+    width: 40%;
 }

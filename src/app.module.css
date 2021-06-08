@@ -1,3 +1,6 @@
 .wrap {
     max-width: 1024px;
 }
+.contents {
+    display: flex;
+}

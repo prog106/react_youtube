@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import styles from './navbar.module.css';
 
-const Navbar = (props) => {
+const Navbar = memo((props) => {
     const inputRef = useRef();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +18,6 @@ const Navbar = (props) => {
             </form>
         </nav>
     );
-};
+});
 
 export default Navbar;

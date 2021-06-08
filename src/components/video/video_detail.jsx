@@ -16,9 +16,9 @@ const VideoDetail = (props) => {
     const embed = `https://www.youtube.com/embed/${props.selectedVideo.id}`;
     return (
         <div className={styles.detail}>
+            <iframe id="ytplayer" title="youtube" type="text/html" width="100%" height="180px" src={embed} frameBorder="0" allowFullScreen></iframe>
             <h3>{props.selectedVideo.snippet.title}</h3>
-            <iframe id="ytplayer" type="text/html" width="320" height="180" src={embed} frameborder="0" allowfullscreen></iframe>
-            <p>{props.selectedVideo.snippet.description}</p>
+            <pre className={styles.pre}>{props.selectedVideo.snippet.description}</pre>
         </div>
     )
 }
