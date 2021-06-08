@@ -1,11 +1,6 @@
-import axios from "axios";
-
 class Youtube {
-    constructor(key) {
-        this.youtube = axios.create({
-            baseURL: 'https://youtube.googleapis.com/youtube/v3',
-        });
-        this.key = key;
+    constructor(httpClient) {
+        this.youtube = httpClient;
     }
     async mostPopular() {
         const response = await this.youtube.get('videos', {
@@ -13,7 +8,6 @@ class Youtube {
                 part: 'snippet',
                 chart: 'mostPopular',
                 maxResults: 25,
-                key: this.key,
             }
         });
         return response.data.items;
@@ -23,8 +17,8 @@ class Youtube {
             params: {
                 part: 'snippet',
                 maxResults: 25,
+                type: 'video',
                 q: q,
-                key: this.key,
             }
         });
         return response.data.items.map(item => ({ ...item, id: item.id.videoId }));
